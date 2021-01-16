@@ -1,0 +1,894 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4ECC3559-BD23-4094-BD5E-9195C6E784FE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TravelTrip</RootNamespace>
+    <AssemblyName>TravelTrip</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CommentBlogViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="adminlte\build\config\postcss.config.js" />
+    <Content Include="adminlte\build\config\rollup.config.js" />
+    <Content Include="adminlte\build\js\AdminLTE.js" />
+    <Content Include="adminlte\build\js\CardRefresh.js" />
+    <Content Include="adminlte\build\js\CardWidget.js" />
+    <Content Include="adminlte\build\js\ControlSidebar.js" />
+    <Content Include="adminlte\build\js\DirectChat.js" />
+    <Content Include="adminlte\build\js\Dropdown.js" />
+    <Content Include="adminlte\build\js\Layout.js" />
+    <Content Include="adminlte\build\js\PushMenu.js" />
+    <Content Include="adminlte\build\js\SiteSearch.js" />
+    <Content Include="adminlte\build\js\Toasts.js" />
+    <Content Include="adminlte\build\js\TodoList.js" />
+    <Content Include="adminlte\build\js\Treeview.js" />
+    <Content Include="adminlte\build\npm\DocsPlugins.js" />
+    <Content Include="adminlte\build\npm\DocsPublish.js" />
+    <Content Include="adminlte\build\npm\Plugins.js" />
+    <Content Include="adminlte\build\npm\Publish.js" />
+    <Content Include="adminlte\dist\css\adminlte.css" />
+    <Content Include="adminlte\dist\css\adminlte.min.css" />
+    <Content Include="adminlte\dist\css\alt\adminlte.components.css" />
+    <Content Include="adminlte\dist\css\alt\adminlte.components.min.css" />
+    <Content Include="adminlte\dist\css\alt\adminlte.core.css" />
+    <Content Include="adminlte\dist\css\alt\adminlte.core.min.css" />
+    <Content Include="adminlte\dist\css\alt\adminlte.extra-components.css" />
+    <Content Include="adminlte\dist\css\alt\adminlte.extra-components.min.css" />
+    <Content Include="adminlte\dist\css\alt\adminlte.pages.css" />
+    <Content Include="adminlte\dist\css\alt\adminlte.pages.min.css" />
+    <Content Include="adminlte\dist\css\alt\adminlte.plugins.css" />
+    <Content Include="adminlte\dist\css\alt\adminlte.plugins.min.css" />
+    <Content Include="adminlte\dist\img\AdminLTELogo.png" />
+    <Content Include="adminlte\dist\img\avatar.png" />
+    <Content Include="adminlte\dist\img\avatar04.png" />
+    <Content Include="adminlte\dist\img\avatar2.png" />
+    <Content Include="adminlte\dist\img\avatar3.png" />
+    <Content Include="adminlte\dist\img\avatar5.png" />
+    <Content Include="adminlte\dist\img\boxed-bg.jpg" />
+    <Content Include="adminlte\dist\img\boxed-bg.png" />
+    <Content Include="adminlte\dist\img\credit\american-express.png" />
+    <Content Include="adminlte\dist\img\credit\cirrus.png" />
+    <Content Include="adminlte\dist\img\credit\mastercard.png" />
+    <Content Include="adminlte\dist\img\credit\mestro.png" />
+    <Content Include="adminlte\dist\img\credit\paypal.png" />
+    <Content Include="adminlte\dist\img\credit\paypal2.png" />
+    <Content Include="adminlte\dist\img\credit\visa.png" />
+    <Content Include="adminlte\dist\img\default-150x150.png" />
+    <Content Include="adminlte\dist\img\icons.png" />
+    <Content Include="adminlte\dist\img\photo1.png" />
+    <Content Include="adminlte\dist\img\photo2.png" />
+    <Content Include="adminlte\dist\img\photo3.jpg" />
+    <Content Include="adminlte\dist\img\photo4.jpg" />
+    <Content Include="adminlte\dist\img\prod-1.jpg" />
+    <Content Include="adminlte\dist\img\prod-2.jpg" />
+    <Content Include="adminlte\dist\img\prod-3.jpg" />
+    <Content Include="adminlte\dist\img\prod-4.jpg" />
+    <Content Include="adminlte\dist\img\prod-5.jpg" />
+    <Content Include="adminlte\dist\img\user1-128x128.jpg" />
+    <Content Include="adminlte\dist\img\user2-160x160.jpg" />
+    <Content Include="adminlte\dist\img\user3-128x128.jpg" />
+    <Content Include="adminlte\dist\img\user4-128x128.jpg" />
+    <Content Include="adminlte\dist\img\user5-128x128.jpg" />
+    <Content Include="adminlte\dist\img\user6-128x128.jpg" />
+    <Content Include="adminlte\dist\img\user7-128x128.jpg" />
+    <Content Include="adminlte\dist\img\user8-128x128.jpg" />
+    <Content Include="adminlte\dist\js\adminlte.js" />
+    <Content Include="adminlte\dist\js\adminlte.min.js" />
+    <Content Include="adminlte\dist\js\demo.js" />
+    <Content Include="adminlte\dist\js\pages\dashboard.js" />
+    <Content Include="adminlte\dist\js\pages\dashboard2.js" />
+    <Content Include="adminlte\dist\js\pages\dashboard3.js" />
+    <Content Include="adminlte\docs\404.html" />
+    <Content Include="adminlte\docs\assets\css\adminlte.css" />
+    <Content Include="adminlte\docs\assets\css\adminlte.min.css" />
+    <Content Include="adminlte\docs\assets\css\alt\adminlte.components.css" />
+    <Content Include="adminlte\docs\assets\css\alt\adminlte.components.min.css" />
+    <Content Include="adminlte\docs\assets\css\alt\adminlte.core.css" />
+    <Content Include="adminlte\docs\assets\css\alt\adminlte.core.min.css" />
+    <Content Include="adminlte\docs\assets\css\alt\adminlte.extra-components.css" />
+    <Content Include="adminlte\docs\assets\css\alt\adminlte.extra-components.min.css" />
+    <Content Include="adminlte\docs\assets\css\alt\adminlte.pages.css" />
+    <Content Include="adminlte\docs\assets\css\alt\adminlte.pages.min.css" />
+    <Content Include="adminlte\docs\assets\css\alt\adminlte.plugins.css" />
+    <Content Include="adminlte\docs\assets\css\alt\adminlte.plugins.min.css" />
+    <Content Include="adminlte\docs\assets\css\docs.css" />
+    <Content Include="adminlte\docs\assets\css\highlighter.css" />
+    <Content Include="adminlte\docs\assets\img\AdminLTELogo.png" />
+    <Content Include="adminlte\docs\assets\img\logo-xl.png" />
+    <Content Include="adminlte\docs\assets\img\logo-xs.png" />
+    <Content Include="adminlte\docs\assets\img\user1-128x128.jpg" />
+    <Content Include="adminlte\docs\assets\img\user3-128x128.jpg" />
+    <Content Include="adminlte\docs\assets\img\user4-128x128.jpg" />
+    <Content Include="adminlte\docs\assets\img\user5-128x128.jpg" />
+    <Content Include="adminlte\docs\assets\img\user6-128x128.jpg" />
+    <Content Include="adminlte\docs\assets\img\user7-128x128.jpg" />
+    <Content Include="adminlte\docs\assets\img\user8-128x128.jpg" />
+    <Content Include="adminlte\docs\assets\js\adminlte.js" />
+    <Content Include="adminlte\docs\assets\js\adminlte.min.js" />
+    <Content Include="adminlte\docs\assets\js\demo.js" />
+    <Content Include="adminlte\docs\assets\js\pages\dashboard.js" />
+    <Content Include="adminlte\docs\assets\js\pages\dashboard2.js" />
+    <Content Include="adminlte\docs\assets\js\pages\dashboard3.js" />
+    <Content Include="adminlte\docs\assets\plugins\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="adminlte\docs\assets\plugins\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="adminlte\docs\assets\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="adminlte\docs\assets\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\css\all.css" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\css\all.min.css" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\css\brands.css" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\css\brands.min.css" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\css\fontawesome.css" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\css\fontawesome.min.css" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\css\regular.css" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\css\regular.min.css" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\css\solid.css" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\css\solid.min.css" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\css\svg-with-js.css" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\css\svg-with-js.min.css" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\css\v4-shims.css" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\css\v4-shims.min.css" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\webfonts\fa-brands-400.svg" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\webfonts\fa-regular-400.svg" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\webfonts\fa-solid-900.svg" />
+    <Content Include="adminlte\docs\assets\plugins\jquery\core.js" />
+    <Content Include="adminlte\docs\assets\plugins\jquery\jquery.js" />
+    <Content Include="adminlte\docs\assets\plugins\jquery\jquery.min.js" />
+    <Content Include="adminlte\docs\assets\plugins\jquery\jquery.slim.js" />
+    <Content Include="adminlte\docs\assets\plugins\jquery\jquery.slim.min.js" />
+    <Content Include="adminlte\docs\assets\plugins\overlayScrollbars\css\OverlayScrollbars.css" />
+    <Content Include="adminlte\docs\assets\plugins\overlayScrollbars\css\OverlayScrollbars.min.css" />
+    <Content Include="adminlte\docs\assets\plugins\overlayScrollbars\js\jquery.overlayScrollbars.js" />
+    <Content Include="adminlte\docs\assets\plugins\overlayScrollbars\js\jquery.overlayScrollbars.min.js" />
+    <Content Include="adminlte\docs\assets\plugins\overlayScrollbars\js\OverlayScrollbars.js" />
+    <Content Include="adminlte\docs\assets\plugins\overlayScrollbars\js\OverlayScrollbars.min.js" />
+    <Content Include="adminlte\docs\assets\plugins\popper\esm\popper-utils.js" />
+    <Content Include="adminlte\docs\assets\plugins\popper\esm\popper-utils.min.js" />
+    <Content Include="adminlte\docs\assets\plugins\popper\esm\popper.js" />
+    <Content Include="adminlte\docs\assets\plugins\popper\esm\popper.min.js" />
+    <Content Include="adminlte\docs\assets\plugins\popper\popper-utils.js" />
+    <Content Include="adminlte\docs\assets\plugins\popper\popper-utils.min.js" />
+    <Content Include="adminlte\docs\assets\plugins\popper\popper.js" />
+    <Content Include="adminlte\docs\assets\plugins\popper\popper.min.js" />
+    <Content Include="adminlte\docs\assets\plugins\popper\umd\popper-utils.js" />
+    <Content Include="adminlte\docs\assets\plugins\popper\umd\popper-utils.min.js" />
+    <Content Include="adminlte\docs\assets\plugins\popper\umd\popper.js" />
+    <Content Include="adminlte\docs\assets\plugins\popper\umd\popper.min.js" />
+    <Content Include="adminlte\index.html" />
+    <Content Include="adminlte\plugins\bootstrap-slider\bootstrap-slider.js" />
+    <Content Include="adminlte\plugins\bootstrap-slider\bootstrap-slider.min.js" />
+    <Content Include="adminlte\plugins\bootstrap-slider\css\bootstrap-slider.css" />
+    <Content Include="adminlte\plugins\bootstrap-slider\css\bootstrap-slider.min.css" />
+    <Content Include="adminlte\plugins\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="adminlte\plugins\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="adminlte\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="adminlte\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="adminlte\plugins\jquery-ui\AUTHORS.txt" />
+    <Content Include="adminlte\plugins\jquery-ui\external\jquery\jquery.js" />
+    <Content Include="adminlte\plugins\jquery-ui\images\ui-icons_444444_256x240.png" />
+    <Content Include="adminlte\plugins\jquery-ui\images\ui-icons_555555_256x240.png" />
+    <Content Include="adminlte\plugins\jquery-ui\images\ui-icons_777620_256x240.png" />
+    <Content Include="adminlte\plugins\jquery-ui\images\ui-icons_777777_256x240.png" />
+    <Content Include="adminlte\plugins\jquery-ui\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="adminlte\plugins\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="adminlte\plugins\jquery-ui\jquery-ui.css" />
+    <Content Include="adminlte\plugins\jquery-ui\jquery-ui.js" />
+    <Content Include="adminlte\plugins\jquery-ui\jquery-ui.min.css" />
+    <Content Include="adminlte\plugins\jquery-ui\jquery-ui.min.js" />
+    <Content Include="adminlte\plugins\jquery-ui\jquery-ui.structure.css" />
+    <Content Include="adminlte\plugins\jquery-ui\jquery-ui.structure.min.css" />
+    <Content Include="adminlte\plugins\jquery-ui\jquery-ui.theme.css" />
+    <Content Include="adminlte\plugins\jquery-ui\jquery-ui.theme.min.css" />
+    <Content Include="adminlte\plugins\jquery-ui\LICENSE.txt" />
+    <Content Include="adminlte\plugins\jquery-validation\additional-methods.js" />
+    <Content Include="adminlte\plugins\jquery-validation\additional-methods.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\jquery.validate.js" />
+    <Content Include="adminlte\plugins\jquery-validation\jquery.validate.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_ar.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_ar.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_az.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_az.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_bg.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_bg.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_bn_BD.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_bn_BD.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_ca.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_ca.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_cs.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_cs.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_da.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_da.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_de.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_de.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_el.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_el.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_es.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_es.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_es_AR.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_es_AR.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_es_PE.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_es_PE.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_et.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_et.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_eu.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_eu.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_fa.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_fa.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_fi.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_fi.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_fr.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_fr.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_ge.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_ge.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_gl.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_gl.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_he.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_he.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_hr.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_hr.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_hu.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_hu.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_hy_AM.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_hy_AM.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_id.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_id.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_is.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_is.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_it.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_it.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_ja.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_ja.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_ka.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_ka.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_kk.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_kk.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_ko.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_ko.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_lt.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_lt.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_lv.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_lv.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_mk.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_mk.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_my.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_my.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_nl.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_nl.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_no.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_no.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_pl.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_pl.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_pt_BR.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_pt_BR.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_pt_PT.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_pt_PT.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_ro.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_ro.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_ru.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_ru.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_sd.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_sd.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_si.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_si.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_sk.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_sk.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_sl.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_sl.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_sr.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_sr.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_sr_lat.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_sr_lat.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_sv.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_sv.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_th.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_th.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_tj.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_tj.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_tr.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_tr.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_uk.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_uk.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_ur.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_ur.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_vi.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_vi.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_zh.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_zh.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_zh_TW.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\messages_zh_TW.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\methods_de.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\methods_de.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\methods_es_CL.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\methods_es_CL.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\methods_fi.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\methods_fi.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\methods_it.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\methods_it.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\methods_nl.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\methods_nl.min.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\methods_pt.js" />
+    <Content Include="adminlte\plugins\jquery-validation\localization\methods_pt.min.js" />
+    <Content Include="adminlte\plugins\jquery\core.js" />
+    <Content Include="adminlte\plugins\jquery\jquery.js" />
+    <Content Include="adminlte\plugins\jquery\jquery.min.js" />
+    <Content Include="adminlte\plugins\jquery\jquery.slim.js" />
+    <Content Include="adminlte\plugins\jquery\jquery.slim.min.js" />
+    <Content Include="adminlte\plugins\select2-bootstrap4-theme\select2-bootstrap4.css" />
+    <Content Include="adminlte\plugins\select2-bootstrap4-theme\select2-bootstrap4.min.css" />
+    <Content Include="adminlte\plugins\select2\css\select2.css" />
+    <Content Include="adminlte\plugins\select2\css\select2.min.css" />
+    <Content Include="adminlte\plugins\select2\js\i18n\af.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\ar.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\az.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\bg.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\bn.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\bs.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\build.txt" />
+    <Content Include="adminlte\plugins\select2\js\i18n\ca.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\cs.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\da.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\de.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\dsb.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\el.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\en.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\es.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\et.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\eu.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\fa.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\fi.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\fr.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\gl.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\he.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\hi.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\hr.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\hsb.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\hu.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\hy.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\id.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\is.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\it.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\ja.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\ka.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\km.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\ko.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\lt.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\lv.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\mk.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\ms.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\nb.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\ne.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\nl.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\pl.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\ps.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\pt-BR.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\pt.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\ro.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\ru.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\sk.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\sl.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\sq.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\sr-Cyrl.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\sr.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\sv.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\th.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\tk.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\tr.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\uk.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\vi.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\zh-CN.js" />
+    <Content Include="adminlte\plugins\select2\js\i18n\zh-TW.js" />
+    <Content Include="adminlte\plugins\select2\js\select2.full.js" />
+    <Content Include="adminlte\plugins\select2\js\select2.full.min.js" />
+    <Content Include="adminlte\plugins\select2\js\select2.js" />
+    <Content Include="adminlte\plugins\select2\js\select2.min.js" />
+    <Content Include="adminlte\starter.html" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="web2\about.html" />
+    <Content Include="web2\contact.html" />
+    <Content Include="web2\css\bootstrap.css" />
+    <Content Include="web2\css\style.css" />
+    <Content Include="web2\images\avatar.png" />
+    <Content Include="web2\images\icon3.png" />
+    <Content Include="web2\images\logo.jpg" />
+    <Content Include="web2\images\man.jpg" />
+    <Content Include="web2\images\more.png" />
+    <Content Include="web2\images\post1.jpg" />
+    <Content Include="web2\images\post2.jpg" />
+    <Content Include="web2\images\post3.jpg" />
+    <Content Include="web2\images\search.png" />
+    <Content Include="web2\index.html" />
+    <Content Include="web2\js\easing.js" />
+    <Content Include="web2\js\jquery.min.js" />
+    <Content Include="web2\js\move-top.js" />
+    <Content Include="web2\single.html" />
+    <Content Include="web2\w3layouts-License.txt" />
+    <Content Include="loginTheme\css\style.css" />
+    <Content Include="loginTheme\images\b4.jpg" />
+    <Content Include="loginTheme\index.html" />
+    <Content Include="loginTheme\w3layouts-License.txt" />
+    <Content Include="web\about.html" />
+    <Content Include="web\contact.html" />
+    <Content Include="web\css\slider.css" />
+    <Content Include="web\css\style.css" />
+    <Content Include="web\destinations.html" />
+    <Content Include="web\images\about_banner.jpg" />
+    <Content Include="web\images\arrows.png" />
+    <Content Include="web\images\but.png" />
+    <Content Include="web\images\contact.png" />
+    <Content Include="web\images\dest_banner.jpg" />
+    <Content Include="web\images\flight.png" />
+    <Content Include="web\images\glass.png" />
+    <Content Include="web\images\group.png" />
+    <Content Include="web\images\head_bg.jpg" />
+    <Content Include="web\images\head_bot.gif" />
+    <Content Include="web\images\img1.jpg" />
+    <Content Include="web\images\img2.jpg" />
+    <Content Include="web\images\img3.jpg" />
+    <Content Include="web\images\img4.jpg" />
+    <Content Include="web\images\key.png" />
+    <Content Include="web\images\link1-bg.gif" />
+    <Content Include="web\images\logo.png" />
+    <Content Include="web\images\pic.jpg" />
+    <Content Include="web\images\pic1.jpg" />
+    <Content Include="web\images\pic10.jpg" />
+    <Content Include="web\images\pic2.jpg" />
+    <Content Include="web\images\pic3.jpg" />
+    <Content Include="web\images\pic4.jpg" />
+    <Content Include="web\images\pic5.jpg" />
+    <Content Include="web\images\pic6.jpg" />
+    <Content Include="web\images\pic7.jpg" />
+    <Content Include="web\images\pic8.jpg" />
+    <Content Include="web\images\pic9.jpg" />
+    <Content Include="web\index.html" />
+    <Content Include="web\js\jquery.min.js" />
+    <Content Include="web\js\responsiveslides.min.js" />
+    <Content Include="web\w3layouts-License.txt" />
+    <Content Include="adminlte\.eslintrc" />
+    <Content Include="adminlte\.gitignore" />
+    <Content Include="adminlte\.npmignore" />
+    <Content Include="adminlte\build\js\.jscsrc" />
+    <Content Include="adminlte\build\scss\.csslintrc" />
+    <Content Include="adminlte\build\scss\AdminLTE-components.scss" />
+    <Content Include="adminlte\build\scss\AdminLTE-core.scss" />
+    <Content Include="adminlte\build\scss\AdminLTE-extra-components.scss" />
+    <Content Include="adminlte\build\scss\AdminLTE-pages.scss" />
+    <Content Include="adminlte\build\scss\AdminLTE-plugins.scss" />
+    <Content Include="adminlte\build\scss\AdminLTE-raw.scss" />
+    <Content Include="adminlte\build\scss\AdminLTE.scss" />
+    <Content Include="adminlte\build\scss\mixins\_accent.scss" />
+    <Content Include="adminlte\build\scss\mixins\_backgrounds.scss" />
+    <Content Include="adminlte\build\scss\mixins\_cards.scss" />
+    <Content Include="adminlte\build\scss\mixins\_custom-forms.scss" />
+    <Content Include="adminlte\build\scss\mixins\_direct-chat.scss" />
+    <Content Include="adminlte\build\scss\mixins\_miscellaneous.scss" />
+    <Content Include="adminlte\build\scss\mixins\_navbar.scss" />
+    <Content Include="adminlte\build\scss\mixins\_sidebar.scss" />
+    <Content Include="adminlte\build\scss\mixins\_toasts.scss" />
+    <Content Include="adminlte\build\scss\pages\_404_500_errors.scss" />
+    <Content Include="adminlte\build\scss\pages\_e-commerce.scss" />
+    <Content Include="adminlte\build\scss\pages\_invoice.scss" />
+    <Content Include="adminlte\build\scss\pages\_lockscreen.scss" />
+    <Content Include="adminlte\build\scss\pages\_login_and_register.scss" />
+    <Content Include="adminlte\build\scss\pages\_mailbox.scss" />
+    <Content Include="adminlte\build\scss\pages\_profile.scss" />
+    <Content Include="adminlte\build\scss\pages\_projects.scss" />
+    <Content Include="adminlte\build\scss\parts\_components.scss" />
+    <Content Include="adminlte\build\scss\parts\_core.scss" />
+    <Content Include="adminlte\build\scss\parts\_extra-components.scss" />
+    <Content Include="adminlte\build\scss\parts\_miscellaneous.scss" />
+    <Content Include="adminlte\build\scss\parts\_pages.scss" />
+    <Content Include="adminlte\build\scss\parts\_plugins.scss" />
+    <Content Include="adminlte\build\scss\plugins\_bootstrap-slider.scss" />
+    <Content Include="adminlte\build\scss\plugins\_bootstrap-switch.scss" />
+    <Content Include="adminlte\build\scss\plugins\_fullcalendar.scss" />
+    <Content Include="adminlte\build\scss\plugins\_icheck-bootstrap.scss" />
+    <Content Include="adminlte\build\scss\plugins\_jqvmap.scss" />
+    <Content Include="adminlte\build\scss\plugins\_mapael.scss" />
+    <Content Include="adminlte\build\scss\plugins\_miscellaneous.scss" />
+    <Content Include="adminlte\build\scss\plugins\_mixins.scss" />
+    <Content Include="adminlte\build\scss\plugins\_pace.scss" />
+    <Content Include="adminlte\build\scss\plugins\_select2.scss" />
+    <Content Include="adminlte\build\scss\plugins\_sweetalert2.scss" />
+    <Content Include="adminlte\build\scss\plugins\_toastr.scss" />
+    <Content Include="adminlte\build\scss\_alerts.scss" />
+    <Content Include="adminlte\build\scss\_bootstrap-variables.scss" />
+    <Content Include="adminlte\build\scss\_brand.scss" />
+    <Content Include="adminlte\build\scss\_buttons.scss" />
+    <Content Include="adminlte\build\scss\_callout.scss" />
+    <Content Include="adminlte\build\scss\_cards.scss" />
+    <Content Include="adminlte\build\scss\_carousel.scss" />
+    <Content Include="adminlte\build\scss\_colors.scss" />
+    <Content Include="adminlte\build\scss\_control-sidebar.scss" />
+    <Content Include="adminlte\build\scss\_direct-chat.scss" />
+    <Content Include="adminlte\build\scss\_dropdown.scss" />
+    <Content Include="adminlte\build\scss\_elevation.scss" />
+    <Content Include="adminlte\build\scss\_forms.scss" />
+    <Content Include="adminlte\build\scss\_info-box.scss" />
+    <Content Include="adminlte\build\scss\_layout.scss" />
+    <Content Include="adminlte\build\scss\_main-header.scss" />
+    <Content Include="adminlte\build\scss\_main-sidebar.scss" />
+    <Content Include="adminlte\build\scss\_miscellaneous.scss" />
+    <Content Include="adminlte\build\scss\_mixins.scss" />
+    <Content Include="adminlte\build\scss\_modals.scss" />
+    <Content Include="adminlte\build\scss\_navs.scss" />
+    <Content Include="adminlte\build\scss\_print.scss" />
+    <Content Include="adminlte\build\scss\_products.scss" />
+    <Content Include="adminlte\build\scss\_progress-bars.scss" />
+    <Content Include="adminlte\build\scss\_sidebar-mini.scss" />
+    <Content Include="adminlte\build\scss\_small-box.scss" />
+    <Content Include="adminlte\build\scss\_social-widgets.scss" />
+    <Content Include="adminlte\build\scss\_table.scss" />
+    <Content Include="adminlte\build\scss\_text.scss" />
+    <Content Include="adminlte\build\scss\_timeline.scss" />
+    <Content Include="adminlte\build\scss\_toasts.scss" />
+    <Content Include="adminlte\build\scss\_users-list.scss" />
+    <Content Include="adminlte\build\scss\_variables.scss" />
+    <Content Include="adminlte\composer.json" />
+    <Content Include="adminlte\dist\css\adminlte.css.map" />
+    <Content Include="adminlte\dist\css\adminlte.min.css.map" />
+    <Content Include="adminlte\dist\css\alt\adminlte.components.css.map" />
+    <Content Include="adminlte\dist\css\alt\adminlte.components.min.css.map" />
+    <Content Include="adminlte\dist\css\alt\adminlte.core.css.map" />
+    <Content Include="adminlte\dist\css\alt\adminlte.core.min.css.map" />
+    <Content Include="adminlte\dist\css\alt\adminlte.extra-components.css.map" />
+    <Content Include="adminlte\dist\css\alt\adminlte.extra-components.min.css.map" />
+    <Content Include="adminlte\dist\css\alt\adminlte.pages.css.map" />
+    <Content Include="adminlte\dist\css\alt\adminlte.pages.min.css.map" />
+    <Content Include="adminlte\dist\css\alt\adminlte.plugins.css.map" />
+    <Content Include="adminlte\dist\css\alt\adminlte.plugins.min.css.map" />
+    <Content Include="adminlte\dist\js\adminlte.js.map" />
+    <Content Include="adminlte\dist\js\adminlte.min.js.map" />
+    <Content Include="adminlte\docs\.npmignore" />
+    <Content Include="adminlte\docs\assets\css\adminlte.css.map" />
+    <Content Include="adminlte\docs\assets\css\adminlte.min.css.map" />
+    <Content Include="adminlte\docs\assets\css\alt\adminlte.components.css.map" />
+    <Content Include="adminlte\docs\assets\css\alt\adminlte.components.min.css.map" />
+    <Content Include="adminlte\docs\assets\css\alt\adminlte.core.css.map" />
+    <Content Include="adminlte\docs\assets\css\alt\adminlte.core.min.css.map" />
+    <Content Include="adminlte\docs\assets\css\alt\adminlte.extra-components.css.map" />
+    <Content Include="adminlte\docs\assets\css\alt\adminlte.extra-components.min.css.map" />
+    <Content Include="adminlte\docs\assets\css\alt\adminlte.pages.css.map" />
+    <Content Include="adminlte\docs\assets\css\alt\adminlte.pages.min.css.map" />
+    <Content Include="adminlte\docs\assets\css\alt\adminlte.plugins.css.map" />
+    <Content Include="adminlte\docs\assets\css\alt\adminlte.plugins.min.css.map" />
+    <Content Include="adminlte\docs\assets\js\adminlte.js.map" />
+    <Content Include="adminlte\docs\assets\js\adminlte.min.js.map" />
+    <Content Include="adminlte\docs\assets\plugins\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="adminlte\docs\assets\plugins\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="adminlte\docs\assets\plugins\bootstrap\js\bootstrap.js.map" />
+    <Content Include="adminlte\docs\assets\plugins\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\webfonts\fa-brands-400.eot" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\webfonts\fa-brands-400.ttf" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\webfonts\fa-brands-400.woff" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\webfonts\fa-brands-400.woff2" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\webfonts\fa-regular-400.eot" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\webfonts\fa-regular-400.ttf" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\webfonts\fa-regular-400.woff" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\webfonts\fa-regular-400.woff2" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\webfonts\fa-solid-900.eot" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\webfonts\fa-solid-900.ttf" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\webfonts\fa-solid-900.woff" />
+    <Content Include="adminlte\docs\assets\plugins\fontawesome-free\webfonts\fa-solid-900.woff2" />
+    <Content Include="adminlte\docs\assets\plugins\jquery\jquery.min.map" />
+    <Content Include="adminlte\docs\assets\plugins\jquery\jquery.slim.min.map" />
+    <Content Include="adminlte\docs\assets\plugins\popper\esm\popper-utils.js.map" />
+    <Content Include="adminlte\docs\assets\plugins\popper\esm\popper-utils.min.js.map" />
+    <Content Include="adminlte\docs\assets\plugins\popper\esm\popper.js.map" />
+    <Content Include="adminlte\docs\assets\plugins\popper\esm\popper.min.js.map" />
+    <Content Include="adminlte\docs\assets\plugins\popper\popper-utils.js.map" />
+    <Content Include="adminlte\docs\assets\plugins\popper\popper-utils.min.js.map" />
+    <Content Include="adminlte\docs\assets\plugins\popper\popper.js.map" />
+    <Content Include="adminlte\docs\assets\plugins\popper\popper.min.js.map" />
+    <Content Include="adminlte\docs\assets\plugins\popper\umd\popper-utils.js.map" />
+    <Content Include="adminlte\docs\assets\plugins\popper\umd\popper-utils.min.js.map" />
+    <Content Include="adminlte\docs\assets\plugins\popper\umd\popper.js.flow" />
+    <Content Include="adminlte\docs\assets\plugins\popper\umd\popper.js.map" />
+    <Content Include="adminlte\docs\assets\plugins\popper\umd\popper.min.js.map" />
+    <Content Include="adminlte\docs\assets\plugins\popper\umd\poppper.js.flow" />
+    <Content Include="adminlte\docs\browser-support.md" />
+    <Content Include="adminlte\docs\components\boxes.md" />
+    <Content Include="adminlte\docs\components\cards.md" />
+    <Content Include="adminlte\docs\components\control-sidebar.md" />
+    <Content Include="adminlte\docs\components\direct-chat.md" />
+    <Content Include="adminlte\docs\components\main-header.md" />
+    <Content Include="adminlte\docs\components\main-sidebar.md" />
+    <Content Include="adminlte\docs\components\miscellaneous.md" />
+    <Content Include="adminlte\docs\components\plugins.md" />
+    <Content Include="adminlte\docs\components\ribbons.md" />
+    <Content Include="adminlte\docs\components\timeline.md" />
+    <Content Include="adminlte\docs\dependencies.md" />
+    <Content Include="adminlte\docs\faq.md" />
+    <Content Include="adminlte\docs\Gemfile" />
+    <Content Include="adminlte\docs\implementations.md" />
+    <Content Include="adminlte\docs\index.md" />
+    <Content Include="adminlte\docs\javascript\card-refresh.md" />
+    <Content Include="adminlte\docs\javascript\card-widget.md" />
+    <Content Include="adminlte\docs\javascript\control-sidebar.md" />
+    <Content Include="adminlte\docs\javascript\direct-chat.md" />
+    <Content Include="adminlte\docs\javascript\layout.md" />
+    <Content Include="adminlte\docs\javascript\push-menu.md" />
+    <Content Include="adminlte\docs\javascript\toasts.md" />
+    <Content Include="adminlte\docs\javascript\todo-list.md" />
+    <Content Include="adminlte\docs\javascript\treeview.md" />
+    <Content Include="adminlte\docs\layout.md" />
+    <Content Include="adminlte\docs\license.md" />
+    <Content Include="adminlte\docs\upgrade-guide.md" />
+    <Content Include="adminlte\docs\_config.yml" />
+    <Content Include="adminlte\LICENSE" />
+    <Content Include="adminlte\package-lock.json" />
+    <Content Include="adminlte\package.json" />
+    <Content Include="adminlte\plugins\.npmignore" />
+    <Content Include="adminlte\plugins\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="adminlte\plugins\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="adminlte\plugins\bootstrap\js\bootstrap.js.map" />
+    <Content Include="adminlte\plugins\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="adminlte\plugins\jquery\jquery.min.map" />
+    <Content Include="adminlte\plugins\jquery\jquery.slim.min.map" />
+    <Content Include="adminlte\README.md" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\BlogDetail.cshtml" />
+    <Content Include="Views\Home\PartialBlogListLeft.cshtml" />
+    <Content Include="Views\Home\PartialBlogListRight.cshtml" />
+    <Content Include="Views\Home\PartialFirstTen.cshtml" />
+    <Content Include="Views\Home\PartialBestPlacesLeft.cshtml" />
+    <Content Include="Views\Home\PartialBestPlacesRight.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Blog.cshtml" />
+    <Content Include="Views\Admin\AddBlog.cshtml" />
+    <Content Include="Views\Admin\BlogDetail.cshtml" />
+    <Content Include="Views\Admin\BlogEdit.cshtml" />
+    <Content Include="Views\Admin\CommentList.cshtml" />
+    <Content Include="Views\Admin\CommentEdit.cshtml" />
+    <Content Include="Views\Admin\About.cshtml" />
+    <Content Include="Views\Admin\AboutEdit.cshtml" />
+    <Content Include="loginTheme\fonts\Asap-Regular.ttf" />
+    <Content Include="loginTheme\fonts\Audiowide-Regular.ttf" />
+    <Content Include="Views\Login\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\" />
+    <Folder Include="Views\Comment\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TravelTrip.BusinessLayer\TravelTrip.BusinessLayer.csproj">
+      <Project>{f158ae56-3f04-44b7-aa82-ebe5481dbba5}</Project>
+      <Name>TravelTrip.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TravelTrip.Entity\TravelTrip.Entity.csproj">
+      <Project>{7a178596-06ff-4fcd-b677-c196c5851580}</Project>
+      <Name>TravelTrip.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3840</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3840/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

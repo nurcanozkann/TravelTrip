@@ -1,0 +1,22 @@
+﻿@using TravelTrip.Entity.Concrete
+@model List<About>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="content">
+    <div class="wrap">
+        <div class="about" style="margin-bottom:50px">
+            <h3>Hakkımızda</h3>
+
+            @foreach (var item in Model)
+            {
+                <center>
+                    <img src="@item.ImageUrl" alt="" /> <br />
+                </center> 
+                @item.Description;
+            }
+        </div>
+    </div>
+</div>

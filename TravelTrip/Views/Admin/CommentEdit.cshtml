@@ -1,0 +1,61 @@
+﻿@using TravelTrip.Entity.Concrete
+@model Comments
+@{
+    ViewBag.Title = "CommentEdit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Yorum Düzenle Sayfası</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Admin</a></li>
+                        <li class="breadcrumb-item active">Yorum Düzenleme</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Yorum Düzenle Sayfası</h3>
+                        </div>
+                        <div class="card-body">
+                            @using (Html.BeginForm("CommentEdit", "Admin", FormMethod.Post))
+                            {
+                                @Html.LabelFor(x => x.Id)
+                                @Html.TextBoxFor(m => m.Id, new { @class = "form-control", @readonly = "readonly" })
+                                <br />
+                                @Html.LabelFor(x => x.Username)
+                                @Html.TextBoxFor(m => m.Username, new { @class = "form-control", @readonly = "readonly" })
+                                <br />
+                                @Html.LabelFor(x => x.Mail)
+                                @Html.TextBoxFor(x => x.Mail, new { @class = "form-control", @readonly = "readonly" })
+                                <br />
+                                @Html.LabelFor(x => x.Comment)
+                                @Html.TextAreaFor(x => x.Comment, 3, 1, new { @class = "form-control" })
+                                <br />
+                                @Html.LabelFor(x => x.Blog.Title)
+                                @Html.TextBoxFor(x => x.Blog.Title, new { @class = "form-control", @readonly = "readonly" })
+                                <br />
+                                <div class="pull-right">
+                                    <button class="btn btn-success btn-sm" style="margin-top:20px" type="submit">Yorum Kaydet</button>
+                                    <a href="@Url.Action("CommentList", "Admin")" style="margin-top:20px" title="Geri Dön" class="btn btn-default  btn-sm"><span class="fa fa-arrow-alt-circle-left"></span></a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+

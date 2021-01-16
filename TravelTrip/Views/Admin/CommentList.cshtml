@@ -1,0 +1,76 @@
+﻿@using TravelTrip.Entity.Concrete
+@model List<Comments>
+@{
+    ViewBag.Title = "CommentList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Yorum Listeleme</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Admin</a></li>
+                        <li class="breadcrumb-item active">Yorumlar</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Yorum Liste Sayfası</h3>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 10px">Id</th>
+                                        <th>Kullanıcı Adı</th>
+                                        <th>Mail</th>
+                                        <th>Yorum</th>
+                                        <th>Blok Başlık</th>
+                                        <th style="width:100px" class="pull-right"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var c in Model)
+                                    {
+                                        <tr>
+                                            <td>@c.Id</td>
+                                            <td>@c.Username</td>
+                                            <td>@c.Mail</td>
+                                            <td>@c.Comment</td>
+                                            <td>@c.Blog.Title</td>
+                                            <td class="pull-right">
+                                                <a href="@Url.Action("CommentEdit","Admin", new { c.Id })" class="btn btn-info btn-sm" title="Edit"><span class="fa fa-edit"></span></a>
+                                                <a href="@Url.Action("CommentDelete","Admin", new { c.Id })" class="btn btn-danger btn-sm" title="Delete"><span class="fa fa-trash"></span></a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer clearfix">
+                            <ul class="pagination pagination-sm m-0 float-right">
+                                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,58 @@
+﻿@using TravelTrip.Entity.Concrete
+@model Blog
+
+@{
+    ViewBag.Title = "BlogDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Blog Detay Sayfası</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Admin</a></li>
+                        <li class="breadcrumb-item active">Blog Detay</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Blog Detay Sayfası</h3>
+                        </div>
+                        <div class="card-body">
+
+                            @Html.LabelFor(x => x.Id)
+                            @Html.TextBoxFor(m => m.Id, new { @class = "form-control" })
+                            <br />
+                            @Html.LabelFor(x => x.Title)
+                            @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                            <br />
+                            @Html.LabelFor(x => x.Description)
+                            @Html.TextAreaFor(x => x.Description, 3, 1, new { @class = "form-control" })
+                            <br />
+                            @Html.LabelFor(x => x.BlogImage)<br />
+                            <img src="@Model.BlogImage" width="200" height="150" />
+                            <br />
+                            @Html.LabelFor(x => x.Date)
+                            @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+                            <div class="pull-right">
+                                <a href="@Url.Action("Blog","Admin")" style="margin-top:20px" title="Geri Dön" class="btn btn-default  btn-sm"><span class="fa fa-arrow-alt-circle-left"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

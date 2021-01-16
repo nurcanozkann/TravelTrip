@@ -1,0 +1,58 @@
+﻿@model TravelTrip.Entity.Concrete.Blog
+@{
+    ViewBag.Title = "AddBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Blog Ekleme Sayfası</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Admin</a></li>
+                        <li class="breadcrumb-item active">Blog Ekleme</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Blog Ekleme Sayfası</h3>
+                        </div>
+                        <div class="card-body">
+                            @using (Html.BeginForm("AddBlog", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                @Html.LabelFor(x => x.Title)
+                                @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                                <br />
+                                @Html.LabelFor(x => x.Description)
+                                @Html.TextAreaFor(x => x.Description, 3, 1, new { @class = "form-control" })
+                                <br />
+                                @Html.LabelFor(x => x.BlogImage)
+                                @Html.TextBox("file", "", new { type = "file", @class = "form-control" })
+                                @*<input type="file" class="form-control" name="file" id="file" accept="image/*">*@
+                                @*<input type="submit" name="Submit" id="Submit" value="Upload" />*@
+
+                                <div class="pull-right">
+                                    <button class="btn btn-success btn-sm" style="margin-top:20px" type="submit">Blog Kaydet</button>
+                                    <a href="@Url.Action("Blog","Admin")" style="margin-top:20px" title="Geri Dön" class="btn btn-default  btn-sm"><span class="fa fa-arrow-alt-circle-left"></span></a>
+                                </div>
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
